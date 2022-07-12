@@ -1,0 +1,292 @@
+<html>
+
+<head>
+	<meta charset="utf-8"/>
+	<title>土豆仔</title>
+	<link href="https://github.githubassets.com/images/mona-loading-default.gif" rel="icon"/>
+	<link href="css/css.css" type="text/css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width,user-scalable=no" />
+        <style>
+*  {
+	box-sizing:border-bix;
+}
+body  {
+	margin:0;
+	color:#fff;
+}
+/*-----链接样式-----*/
+a:link,
+a:visited  {
+	color:#fff;
+	-webkit-tap-highlight-color:rgba(255,0,0,0);
+	text-decoration:none;
+}
+a:hover,
+a:active  {
+	text-decoration:none;
+}
+/*-----清除悬浮-----*/
+.clear{
+	clear:both;
+}
+/*--分割线--*/
+hr  {
+	border:none;
+	width:95%;
+	height:3px;
+	margin:10 auto;
+	background:#E0E0E0;
+}
+/*--背景--*/
+#canvas  {
+    z-index:-999;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    margin-top: 0px;
+}
+/*--整体--*/
+.box  {
+	background:;
+	max-width:800px;
+	margin:0 auto;
+}
+/*--顶部--*/
+.header  {
+	padding:15px;
+	font-size:30px;
+	text-align:center;
+	background: -webkit-linear-gradient(left,#2196F3 ,#E91E63 25%, #2196F3 50%, #E91E63 75%, #2196F3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-size: 200% 100%;
+    -webkit-animation: runs 3s infinite linear;
+    backdrop-filter:blur(1px);
+}
+.h-tip  {
+	
+}
+/*--主要部分--*/
+.main  {
+	padding:0 20px;
+}
+/*--内容--*/
+.section  {
+	padding:10px;
+	margin:0 0 10 0;
+   background: rgba(0,0,0,0.1);
+}
+.s-time  {
+	font-size:12px;
+	text-align:center;
+	background:rgba(255,255,255,0.1);
+	color:#fff;
+	padding:5px;
+	width:100px;
+    border-left:solid 1px;
+}
+.section2  {
+	background:rgba(255,255,255,0.1);
+	padding:4 10;
+	font-size:10px;
+	margin:10px 10px;
+	border-radius:2px;
+}
+/*--底部--*/
+.footer  {
+	padding:15px;
+	background:rgba(0,0,0,0.1);
+}
+/*--动画--*/
+@-webkit-keyframes runs {
+0% {
+background-position: 0 0;
+}
+100% {
+background-position: -100% 0;
+}
+}
+/*--响应式设计--*/
+@media screen and (max-width:700px){
+	.header  {
+		font-size:25px;
+	}
+	.main  {
+		padding:0;
+	}
+}
+        </style>
+</head>
+
+<body>
+
+	<canvas id="canvas"></canvas>
+	<script type="text/javascript">
+		var canvas=document.getElementById('canvas');
+		var context = canvas.getContext('2d');
+		var height = window.innerHeight;
+		var width = window.innerWidth;
+		var fontSize=16;
+		var colume=width/fontSize;
+
+		console.info(height+"-"+width);
+		canvas.height=height;
+		canvas.width=width;
+
+		var list=[];
+		for (var i = 0; i <colume; i++) {
+			list.push(0);
+		}
+		console.info(list);
+
+
+		var str="01";
+		function draw(){
+			context.fillStyle="rgb(0,0,0,0.05)";
+			context.fillRect(0,0,width,height);
+			context.font=fontSize+"px 微软雅黑";
+			context.fillStyle='green';
+			// context.fillStyle=getcolor();
+
+			for(var i=0;i<colume;i++){
+				var index=Math.floor(Math.random()*str.length);
+				var x = i * fontSize;
+				var y = list[i]*fontSize;
+				context.fillText(str[index],x,y);
+				if (y>height && Math.random()>0.95) {
+					list[i]=0;
+				}
+				list[i]++;
+			}
+		}
+		draw();
+		setInterval(draw,30);
+		// 	//得到随机字体颜色
+		// function getcolor(){
+		// 	var r = Math.floor(Math.random() * 255);
+		// 	var g = Math.floor(Math.random() * 255);
+		// 	var b = Math.floor(Math.random() * 255);
+		// 	return 'rgb('+r+','+g+','+b+')';
+		// }
+	</script>
+
+<div class="box">
+
+<div class="header"><b>土豆仔</b></div>
+
+<div class="main">
+
+	<div class="section">
+		<div class="s-time">2022/7/12</div>
+		<h3>音乐</h3>
+		<p><b>说明</b></p>
+		听就完事了
+		<iframe style="opacity:0.6;" frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="https://music.163.com/outchain/player?type=2&id=1416387309&auto=1&height=66"></iframe>
+	</div>
+    <div class="section">
+		<div class="s-time">2022/7/12</div>
+		<h3>东方千夜帖汉化版</h3>
+		<p><b>说明</b></p>
+		版本1.10
+		<p><b>下载链接</b></p>
+		<p>https://wwc.lanzoub.com/iqP2I07qj5ra<br/>(东方WiKi中搜索有官方汉化版下载链接)https://thwiki.cc/</p>
+	</div>
+	<div class="section">
+		<div class="s-time">2022/7/12</div>
+		<h3>旋风加速器(安卓/ios VPN)</h3>
+		<p><b>说明</b></p>
+		使用时间2h，过后需要等待冷却，速度快，不可选地区
+		<p><b>下载链接(官网链接)</b></p>
+		<p>https://www.us5zbfn7.com/RHU1RYL</p>
+	</div>
+	<div class="section">
+		<div class="s-time">2022/7/12</div>
+		<h3>Surf VPN</h3>
+		<p><b>说明</b></p>
+		版本1.7.4(安卓)<br/>速度不快，但免费，可选部分地区
+		<p><b>下载链接</b></p>
+		<p>https://wwc.lanzoub.com/il6pA07e0j1c</p>
+	</div>
+	<div class="section">
+		<div class="s-time">2022/4/17|2022/7/5</div>
+		<h3>究极绿宝石V.4-虹之抹滅者</h3>
+		<p><b>说明</b></p>
+		蓝奏云版本5.3<br/>百度网盘版本官方最新
+		<p><b>下载链接</b></p>
+		<p>https://wwc.lanzoub.com/iu27d07e0eub<br/>https://pan.baidu.com/s/1Z0b4Ste3EnMTwXBmIGeEAQ 提取码: itv3</p>
+		<div class="section2">需要配合GBA模拟器使用，如果无法打开请将卡带存档类型改为'Flash 128K'<br/>百度网盘链接为官方分享链接，实时更新最近版资源<br/>蓝奏云链接为我自己上传</div>
+	</div>
+	<div class="section">
+		<div class="s-time">2022/2/15</div>
+		<h3>无人深空</h3>
+		<p><b>说明</b></p>
+		版本3.7
+		<p><b>下载链接</b></p>
+		<p>https://pan.baidu.com/s/1l60-Ki6KBNjpgPqgbiCC4A<br/>提取码:2q0i</p>
+	</div>
+	<div class="section">
+		<div class="s-time">2022/2/11</div>
+		<h3>TIM精简版</h3>
+		<p><b>说明</b></p>
+		版本2.3.1<br/>屏蔽更新，防撤回和闪照
+		<p><b>下载链接</b></p>
+		<p>https://wwi.lanzouw.com/i5iTll49uih</p>
+		<div class="section2">注意不要把TIM从后台关闭，这样会真的被关闭，无法收到消息(即使允许自启动等)</div>
+	</div>
+	<div class="section">
+		<div class="s-time">2022/2/11</div>
+		<h3>Caustic安卓破解版</h3>
+		<p><b>说明</b></p>
+		版本3.2.0<br/>有汉化皮肤，但不建议用(机翻)
+		<p><b>下载链接</b></p>
+		<p>https://wwi.lanzouw.com/b00pd9xqh 密码:caustic</p>
+	</div>
+	<div class="section">
+		<div class="s-time">2022/2/10</div>
+		<h3>bilibili精简版</h3>
+		<p><b>说明</b></p>
+		版本5.47<br/>无会员购和广告，其他功能均正常，可日用
+		<p><b>下载链接</b></p>
+		<p>https://wwi.lanzouw.com/i8pLkzttjda</p>
+	</div>
+	<div class="section">
+		<div class="s-time">2022/2/9</div>
+		<h3>Spotify修改版</h3>
+		<p><b>说明</b></p>
+		版本是8.6.32.925<br/>解除了免费账户的限制，无广告，可无限跳过歌曲，有歌词，高音质无法解锁<br/>可以先下载了体验一下Spotify，感觉好的可以付费账户享受更高音质
+		<p><b>下载链接</b></p>
+		<p>https://wwe.lanzoui.com/i2JE1scxmuf 密码:8ryd</p>
+	</div>
+	<div class="section">
+		<div class="s-time">2022/2/9</div>
+		<h3>FL所有版本资源(无最最新)</h3>
+		<p><b>说明</b></p>
+		<ol><li>FL1-20.8</li>
+		<li>FLM Google Play版，华为鸿蒙版，ios版</li>
+		<li>FL1-11未破解，12和20提供汉化和破解</ol>
+		<p><b>下载链接</b></p>
+		<p>来自阿婆主分享的历代版本+皮肤<br/>https://pan.baidu.com/s/1Y_8JlsZSvyoIGisPjsSm-w 
+提取码：h5h0<br/><h6>FL12就不分享了，有20谁还用12 ^_^</h6>FL20.8<br/>没传百度网盘，哪天想起来了分享，​</p>
+		<div class="section2">FL1-11资源来自"<b>【[进化史]音乐制作软件FLstudio的诞生与历代旧版本演示-哔哩哔哩】 https://b23.tv/16Xmbje</b>"<br/>其实我也不知道是不是1-11，或许更多但至少是有这些的，没测试</div>
+	</div>
+	<div class="section">
+		<div class="s-time">2022/2/9</div>
+		<h3>为啥建这个网页</h3>
+		<p>
+			<ol>
+				<li>分享一些资源</li>
+				<li>闲的没事，</li>
+			</ol>
+		</p>
+	</div>
+</div>
+
+<div class="footer">
+	<h3>关于</h3>
+	<p><del>没啥好关于的=_=</del><br/>该网页预计只用这一个页面，无花里胡哨设计，无其他页面，方便省事效率高 ^_^ <br/><b>作者扣扣：妖骑妖呜呜就散妖摇铃</b></p>
+</div>
+
+</div>
+</body>
+
+</html>
